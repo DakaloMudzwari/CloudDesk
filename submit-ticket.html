@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudDesk | Submit Ticket</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <a href="index.html"
+                style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.75rem; margin-bottom: 3rem; cursor: pointer;">
+                <div
+                    style="width: 40px; height: 40px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <span style="font-weight: 700; font-size: 1.25rem;">CloudDesk</span>
+            </a>
+            <nav style="display: flex; flex-direction: column; gap: 0.5rem; flex: 1;">
+                <a href="user-dashboard.html" class="btn"
+                    style="justify-content: flex-start; color: var(--text-muted);">
+                    <i class="fas fa-th-large"></i> <span>Dashboard</span>
+                </a>
+                <a href="submit-ticket.html" class="btn"
+                    style="justify-content: flex-start; background: rgba(99, 102, 241, 0.1); color: var(--primary);">
+                    <i class="fas fa-plus-circle"></i> <span>New Ticket</span>
+                </a>
+                <a href="history.html" class="btn" style="justify-content: flex-start; color: var(--text-muted);">
+                    <i class="fas fa-history"></i> <span>Ticket History</span>
+                </a>
+            </nav>
+            <div style="margin-top: auto;">
+                <button id="logoutBtn" class="btn"
+                    style="width: 100%; justify-content: flex-start; color: var(--danger);">
+                    <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header style="margin-bottom: 2.5rem;">
+                <a href="user-dashboard.html"
+                    style="color: var(--primary); text-decoration: none; font-size: 0.875rem; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+                <h1 style="font-size: 1.75rem;">Create New Ticket</h1>
+                <p style="color: var(--text-muted);">Provide details about your technical issue</p>
+            </header>
+
+            <div class="glass-card" style="max-width: 800px;">
+                <form id="ticketForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label for="title">Issue Summary</label>
+                            <input type="text" id="title" class="form-input"
+                                placeholder="e.g., Cannot access printer in Room 302" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" class="form-input"
+                                style="appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 0.65rem auto;">
+                                <option value="Hardware">Hardware</option>
+                                <option value="Software">Software</option>
+                                <option value="Network">Network</option>
+                                <option value="Account/Access">Account/Access</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="priority">Priority</label>
+                            <select id="priority" class="form-input"
+                                style="appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 0.65rem auto;">
+                                <option value="Low">Low - Not Urgent</option>
+                                <option value="Medium" selected>Medium - Normal</option>
+                                <option value="High">High - Urgent</option>
+                                <option value="Critical">Critical - Blocker</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label for="description">Detailed Description</label>
+                            <textarea id="description" class="form-input" rows="6"
+                                placeholder="Please provide as much detail as possible..." required></textarea>
+                        </div>
+
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label>Attachments (Optional)</label>
+                            <div style="border: 2px dashed var(--glass-border); border-radius: var(--radius-md); padding: 2rem; text-align: center; cursor: pointer; transition: all 0.2s;"
+                                onclick="document.getElementById('file').click()"
+                                onmouseover="this.style.borderColor='var(--primary)'"
+                                onmouseout="this.style.borderColor='var(--glass-border)'">
+                                <i class="fas fa-cloud-upload-alt"
+                                    style="font-size: 2rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
+                                <p style="color: var(--text-muted);">Click or drag files to upload screenshots</p>
+                                <input type="file" id="file" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1rem;">
+                        <button type="button" onclick="history.back()" class="btn"
+                            style="background: rgba(255,255,255,0.05);">Cancel</button>
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 2.5rem;">Submit
+                            Ticket</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/app.js" type="module"></script>
+    <script type="module">
+        import { app } from './assets/js/app.js';
+
+        const user = app.getSession();
+        if (!user) window.location.href = 'index.html';
+
+        document.getElementById('logoutBtn').onclick = () => app.logout();
+
+        const ticketForm = document.getElementById('ticketForm');
+        ticketForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData();
+            formData.append('userId', user.id);
+            formData.append('title', document.getElementById('title').value);
+            formData.append('category', document.getElementById('category').value);
+            formData.append('priority', document.getElementById('priority').value);
+            formData.append('description', document.getElementById('description').value);
+            
+            const fileInput = document.getElementById('file');
+            if (fileInput.files.length > 0) {
+                formData.append('file', fileInput.files[0]);
+            }
+
+            try {
+                const response = await fetch('api/tickets.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                if (result.success) {
+                    app.showToast('Ticket submitted successfully!', 'success');
+                    setTimeout(() => window.location.href = 'user-dashboard.html', 1000);
+                } else {
+                    app.showToast(result.error || 'Failed to submit ticket', 'danger');
+                }
+            } catch (err) {
+                app.showToast('Failed to connect to server', 'danger');
+                console.error(err);
+            }
+        });
+    </script>
+</body>
+
+</html>

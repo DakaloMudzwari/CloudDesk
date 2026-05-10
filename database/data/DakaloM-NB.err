@@ -1,0 +1,14 @@
+2026-05-05T07:44:00.644327Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2026-05-05T07:44:00.869365Z 0 [System] [MY-010116] [Server] C:\Program Files\MySQL\MySQL Server 8.4\bin\mysqld.exe (mysqld 8.4.8) starting as process 11448
+2026-05-05T07:44:00.908982Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-05-05T07:44:01.248917Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-05-05T07:44:01.649844Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-05-05T07:44:01.653052Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-05-05T07:44:01.731062Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2026-05-05T07:44:01.731158Z 0 [System] [MY-010931] [Server] C:\Program Files\MySQL\MySQL Server 8.4\bin\mysqld.exe: ready for connections. Version: '8.4.8'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2026-05-09T10:29:56.247467Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
+2026-05-09T10:29:56.254823Z 0 [System] [MY-013169] [Server] C:\Program Files\MySQL\MySQL Server 8.4\bin\mysqld.exe (mysqld 8.4.8) initializing of server in progress as process 35516
+2026-05-09T10:29:56.259458Z 0 [ERROR] [MY-010457] [Server] --initialize specified but the data directory has files in it. Aborting.
+2026-05-09T10:29:56.260231Z 0 [ERROR] [MY-013236] [Server] The designated data directory C:\Users\dakalo\Desktop\cloudesk\database\data\ is unusable. You can remove all files that the server added to it.
+2026-05-09T10:29:56.263903Z 0 [ERROR] [MY-010119] [Server] Aborting
+2026-05-09T10:29:56.264538Z 0 [System] [MY-015018] [Server] MySQL Server Initialization - end.
