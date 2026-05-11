@@ -82,8 +82,10 @@ class CloudDesk {
         this.showToast('Login successful! Redirecting...', 'success');
         
         setTimeout(() => {
-            if (user.role === 'admin' || user.role === 'technician') {
+            if (user.role === 'admin') {
                 window.location.href = 'admin-dashboard.html';
+            } else if (user.role === 'technician') {
+                window.location.href = 'technician-dashboard.html';
             } else {
                 window.location.href = 'user-dashboard.html';
             }
