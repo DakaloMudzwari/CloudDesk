@@ -95,7 +95,8 @@ class CloudDesk {
         if (!user) return [];
 
         try {
-            const response = await fetch(`api/tickets.php?user_id=${user.id}`);
+            const url = user.role === 'user' ? `api/tickets.php?user_id=${user.id}` : 'api/tickets.php';
+            const response = await fetch(url);
             const data = await response.json();
             if (Array.isArray(data)) return data;
         } catch (err) {
